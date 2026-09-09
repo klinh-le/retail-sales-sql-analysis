@@ -1,5 +1,4 @@
--- Business Question 1: What are total sales and profit by region?
-SELECT SUM(sales) AS total_sale, SUM(profit) AS total_profit, region
+SELECT SUM(sales) AS total_sale, SUM(profit) AS total_profit, ROUND(SUM(profit) / SUM(sales) * 100, 2) AS profit_margin, region
 FROM orders
 GROUP BY region
-ORDER BY SUM(sales) DESC;
+ORDER BY total_profit desc;
