@@ -47,35 +47,51 @@ Regional managers at a mid-size retail chain have visibility into raw sales numb
 ### 1. Sales & Profit by Region
 [`sql/01_sales_profit_by_region.sql`](sql/01_sales_profit_by_region.sql)
 
+![Sales and profit by region](images/01_sales_profit_by_region.png)
+
 West leads in both total sales ($725K) and profit margin (14.94%). Central has the second-highest sales ($501K) but by far the weakest margin of any region (7.92%), less than half of West's, despite selling more than South. High sales volume does not guarantee high profitability.
 
 ### 2. Category & Sub-Category Profitability
 [`sql/02_category_subcategory_profitability.sql`](sql/02_category_subcategory_profitability.sql)
+
+![Category and sub-category profitability](images/02_category_subcategory_profitability.png)
 
 Furniture **Tables** (-8.56% margin) and **Bookcases** (-3.02% margin) are actively losing money despite substantial sales volume. Office Supplies sub-categories like Paper, Labels, and Envelopes are the most profitable, several exceeding 40% margin. Furniture as a category is not uniformly unprofitable. Furnishings and Chairs perform fine; the losses are concentrated in two specific sub-categories.
 
 ### 3. Discount Impact on Profitability
 [`sql/02b_discount_by_subcategory.sql`](sql/02b_discount_by_subcategory.sql)
 
+![Average discount by sub-category](images/02b_discount_by_subcategory.png)
+
 Tables and Bookcases carry above-average discount rates (26.13% and 21.11%), but discount rate alone doesn't fully explain unprofitability. Binders sustains an even higher average discount (37.23%) while remaining solidly profitable. This suggests furniture's underlying cost structure leaves less room to absorb discounting than other product types.
 
 ### 4. Top Customers by Sales
 [`sql/03_top_10_customers_by_sales.sql`](sql/03_top_10_customers_by_sales.sql)
+
+![Top 10 customers by sales](images/03_top_10_customers.png)
 
 7 of the top 10 individual customers by sales belong to the **Consumer** segment. This holds up at the aggregate level: Consumer generates $1.16M in total sales, more than Corporate ($706K) and Home Office ($430K) combined, confirming Consumer as the company's most valuable segment by volume, not just an artifact of a few big spenders.
 
 ### 5. Monthly Sales Trend
 [`sql/04_monthly_sales_trend.sql`](sql/04_monthly_sales_trend.sql)
 
+![Monthly sales trend 2011-2014](images/04_monthly_sales_trend.png)
+
 Sales follow a consistent seasonal pattern every year: low in January/February, a gradual rise through mid-year, a distinct spike in **September**, a slight pullback in October, then the year's highest sales in **November and December**. This pattern repeats almost identically across all four years, indicating a genuine, predictable seasonal effect rather than a one-off trend.
 
 ### 6. Orders Sold at a Loss
 [`sql/05_orders_sold_at_loss.sql`](sql/05_orders_sold_at_loss.sql) · [`sql/05b_loss_vs_profit_discount_comparison.sql`](sql/05b_loss_vs_profit_discount_comparison.sql)
 
+![Sample of orders sold at a loss](images/05_sold_at_loss.png)
+
+![Loss vs. profit average discount comparison](images/05b_loss_vs_profit_discount.png)
+
 Nearly **1 in 5 orders (1,871 of 9,994, ~18.7%)** are sold at a loss. Profitable orders average an 8.14% discount, while loss-making orders average **48.09%**, nearly 6x higher. Discounting isn't just correlated with lower margins; it's strongly associated with orders losing money outright.
 
 ### 7. Profit Margin by State
 [`sql/06_profit_margin_by_state.sql`](sql/06_profit_margin_by_state.sql)
+
+![Profit margin by state](images/06_profit_margin_by_state.png)
 
 **Ohio has the worst profit margin in the dataset (-21.69%)**, followed by Colorado, Tennessee, Illinois, and Texas, all deeply unprofitable. Critically, these aren't low-volume statistical noise: Texas alone has 985 orders and still loses money overall. By contrast, high-volume states like California (2,001 orders, 16.69% margin) and New York (1,128 orders, 23.82% margin) show that strong margins are achievable at scale. The underperformance in Ohio, Texas, and Illinois reflects a real, material problem rather than a small-sample artifact.
 
